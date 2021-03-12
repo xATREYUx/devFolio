@@ -35,19 +35,29 @@ const NewPostForm = () => {
   return (
     <NewPostFormContainer>
       <form onSubmit={handleSubmit(submitPost)}>
+        <h1>New Post</h1>
+        <br />
+        <label>Title</label>
+        <br />
         <input type="text" placeholder="Title" name="title" ref={register} />
+        <br />
+        <label>Caption</label>
+        <br />
         <input
           type="text"
           placeholder="Caption"
           name="caption"
           ref={register}
-        />
+        /><br />
+        <label>Content</label><br />
         <input
           type="textarea"
           placeholder="Content"
           name="content"
           ref={register}
-        />
+        /><br />
+        <label>Image</label>
+        <br />
         <input
           type="text"
           placeholder="Image"
@@ -55,6 +65,8 @@ const NewPostForm = () => {
           ref={register}
         />
         {appendErrors.password && <p>{appendErrors.password.message}</p>}
+        <br />
+
         <input type="submit" />
       </form>
     </NewPostFormContainer>

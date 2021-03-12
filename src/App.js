@@ -17,16 +17,18 @@ const App = () => {
   console.log("App authState", authState);
 
   return (
-    <AuthContext.Provider value={[authState, setAuthState, login, logout]}>
-      <Router>
-        <TopMenu />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/auth-page" component={AuthPage} />
-          <PrivateRoute exact path="/admin-page" component={AdminPage} />
-        </Switch>
-      </Router>
-    </AuthContext.Provider>
+    <div className="app-container">
+      <AuthContext.Provider value={[authState, setAuthState, login, logout]}>
+        <Router>
+          <TopMenu />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/auth-page" component={AuthPage} />
+            <PrivateRoute exact path="/admin-page" component={AdminPage} />
+          </Switch>
+        </Router>
+      </AuthContext.Provider>
+    </div>
   );
 };
 

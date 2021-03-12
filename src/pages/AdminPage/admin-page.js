@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Container, Column } from "../../shared/shared.styles"
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import AuthContext from "../../shared/context/authContext";
 import { AdminPageContainer } from "./admin-page-styles";
@@ -28,12 +29,12 @@ const AdminPage = () => {
   }, [authState.userId, sendRequest]);
   return (
     <AdminPageContainer>
-      <div className="column">
+      <Column>
         <PostList posts={loadedPosts} />
-      </div>
-      <div className="column">
+      </Column>
+      <Column>
         <NewPostForm />
-      </div>
+      </Column>
     </AdminPageContainer>
   );
 };

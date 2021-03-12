@@ -23,3 +23,8 @@ export const Row = styled.div`
   /* align-items: center; */
   /* margin: auto; */
 `;
+
+export const Column = styled.div`
+flex: 1;
+justify-content: center
+ `
