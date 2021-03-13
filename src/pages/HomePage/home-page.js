@@ -12,7 +12,7 @@ import { useHttpClient } from "../../shared/hooks/http-hook";
 
 import Header from "../../components/Header-Footer/Header";
 import ProfileSection from "../../components/ProfileSection/ProfileSection";
-// import PostList from "../../components/PostList/PostList";
+import PostList from "../../components/PostList/PostList";
 // import Footer from "./home-page-components/footer";
 // import { PostsContext } from "../../shared/context";
 import { ReactComponent as BlobTop } from "../../shared/images/blobTop.svg";
@@ -53,7 +53,7 @@ const HomePage = (props) => {
       if (bubblesRef.current) {
         let scrolledValue = window.scrollY / 3.5;
         bubblesRef.current.style.transform = `translateY(
-      -${scrolledValue + "px"} 
+      -${scrolledValue + "px"}
       )`;
         console.log("scrolling...", scrolledValue);
       }
@@ -70,7 +70,7 @@ const HomePage = (props) => {
         <AnimationCoupleSitting />
         <div className="section-column column-left">
           <Title>React Engineering</Title>
-          {/* <PostList posts={loadedPosts} /> */}
+          <PostList posts={loadedPosts} />
         </div>
         <div className="section-column column-right">
           <ProfileSection />

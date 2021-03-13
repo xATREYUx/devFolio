@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { TopMenuContainer } from "./top-menu-styles.js";
+import { Container, Column } from "../../shared/shared.styles";
 
 import { useHistory } from "react-router-dom";
 import { appendErrors, useForm } from "react-hook-form";
@@ -7,6 +8,9 @@ import { appendErrors, useForm } from "react-hook-form";
 import AuthContext from "../../shared/context/authContext";
 
 import { useHttpClient } from "../../shared/hooks/http-hook";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const TopMenu = () => {
   const [authState, setAuthState, login, logout] = useContext(AuthContext);
@@ -44,20 +48,43 @@ const TopMenu = () => {
 
   return (
     <TopMenuContainer>
-      {!authState.isLoggedIn && (
-        <form onSubmit={handleSubmit(submitLogin)}>
-          <input type="text" placeholder="Email" name="email" ref={register} />
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            ref={register}
+      <Column className="top-left">
+        <div>@mattattheworld</div>
+      </Column>
+      <Column></Column>
+      <Column className="top-right">
+        {!authState.isLoggedIn && (
+          <form onSubmit={handleSubmit(submitLogin)}>
+            <input
+              type="text"
+              placeholder="Email"
+              name="email"
+              ref={register}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              ref={register}
+            />
+            {appendErrors.password && <p>{appendErrors.password.message}</p>}
+            <button type="submit" className="top-menu-submit">
+              <FontAwesomeIcon
+                icon={faSignOutAlt}
+                color="#E75B26"
+                onClick={logoutHandler}
+              />
+            </button>
+          </form>
+        )}
+        {authState.isLoggedIn && (
+          <FontAwesomeIcon
+            icon={faSignOutAlt}
+            color="#E75B26"
+            onClick={logoutHandler}
           />
-          {appendErrors.password && <p>{appendErrors.password.message}</p>}
-          <input type="submit" />
-        </form>
-      )}
-      {authState.isLoggedIn && <button onClick={logoutHandler}> Logout</button>}
+        )}
+      </Column>
     </TopMenuContainer>
   );
 };
