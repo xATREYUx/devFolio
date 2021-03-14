@@ -63,7 +63,6 @@ const TopMenu = () => {
           @mattattheworld
         </div>
       </Column>
-      <Column className="top-center"></Column>
       <Column className="top-right">
         {!authState.isLoggedIn && (
           <Row>
@@ -92,23 +91,26 @@ const TopMenu = () => {
           </Row>
         )}
         {authState.isLoggedIn && (
-          <div className=" ">
-            <FontAwesomeIcon
-              className="logged-in-icons"
-              icon={faUserAstronaut}
-              // color="#E75B26"
-              onClick={() => history.push("/admin-page")}
-            />
-            <FontAwesomeIcon
-              className="logged-in-icons"
-              icon={faSignOutAlt}
-              color="#E75B26"
-              onClick={logoutHandler}
-            />
+          <div className="logged-in-icons-container">
+            <div className="logged-in-icon"
+            >
+              <FontAwesomeIcon
+                icon={faUserAstronaut}
+                color="#E75B26"
+                onClick={() => history.push("/admin-page")}
+              />
+            </div>
+            <div className="logged-in-icon">
+              <FontAwesomeIcon
+                icon={faSignOutAlt}
+                color="#E75B26"
+                onClick={logoutHandler}
+              />
+            </div>
           </div>
         )}
       </Column>
-    </TopMenuContainer>
+    </TopMenuContainer >
   );
 };
 
