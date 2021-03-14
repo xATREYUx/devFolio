@@ -55,7 +55,13 @@ const TopMenu = () => {
   return (
     <TopMenuContainer>
       <Column className="top-left">
-        <Button to="/">@mattattheworld</Button>
+        <div
+          onClick={() => {
+            history.push("/");
+          }}
+        >
+          @mattattheworld
+        </div>
       </Column>
       <Column className="top-center"></Column>
       <Column className="top-right">
@@ -82,17 +88,19 @@ const TopMenu = () => {
                   onClick={logoutHandler}
                 />
               </button>
-            </form>{" "}
+            </form>
           </Row>
         )}
         {authState.isLoggedIn && (
-          <div className="logged-in-icons">
+          <div className=" ">
             <FontAwesomeIcon
+              className="logged-in-icons"
               icon={faUserAstronaut}
-              color="#E75B26"
+              // color="#E75B26"
               onClick={() => history.push("/admin-page")}
             />
             <FontAwesomeIcon
+              className="logged-in-icons"
               icon={faSignOutAlt}
               color="#E75B26"
               onClick={logoutHandler}

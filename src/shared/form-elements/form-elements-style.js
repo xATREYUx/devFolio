@@ -74,7 +74,7 @@ export const ButtonContainer = styled.div`
 
   .button:hover,
   .button:active {
-    background: #ff4382;
+    /* background: #ff4382; */
     border-color: #ff4382;
   }
 
