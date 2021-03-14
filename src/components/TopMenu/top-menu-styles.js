@@ -8,6 +8,9 @@ export const TopMenuContainer = styled.div`
   align-items: center;
 
   .top-right {
+    input {
+      margin: 5px;
+    }
   }
 
   .top-left {

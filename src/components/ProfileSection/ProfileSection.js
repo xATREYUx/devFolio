@@ -9,21 +9,13 @@ import Button from "../../shared/form-elements/button";
 const ProfileSection = () => {
   return (
     <ProfileSectionContainer>
-      <div className="row">
-        <div className="profile-background">
-          <img src={ProfilePic} alt="ProfilePic" />
-        </div>
-      </div>
-      <div className="row">
-        <NamePlateContainer>
-          <h1>Matthew David</h1>
-          <p>Full Stack Development</p>
-          <p>Miami Beach, FL</p>
-        </NamePlateContainer>
-      </div>
-      <div className="row">
-        <Button inverse>Contact Me</Button>
-      </div>
+      <img src={ProfilePic} alt="ProfilePic" />
+      <NamePlateContainer>
+        <h1>Matthew David</h1>
+        <p>Full Stack Development</p>
+        <p>Miami Beach, FL</p>
+      </NamePlateContainer>
+      <Button inverse>Contact Me</Button>
     </ProfileSectionContainer>
   );
 };
