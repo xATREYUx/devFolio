@@ -8,9 +8,14 @@ export const TopMenuContainer = styled.div`
   align-items: center;
 
   .top-right {
+    display: flex;
+    margin: 20px;
+
     input {
-      margin: 5px;
+      width: 100px;
+      margin: 3px;
     }
+    justify-content: flex-end;
   }
 
   .top-left {
@@ -18,11 +23,16 @@ export const TopMenuContainer = styled.div`
     font-size: 1rem;
     padding: 20px;
     text-align: left;
+    justify-content: space-around;
   }
 
   .top-menu-submit {
     background-color: white;
     border: none;
+  }
+
+  .logged-in-icons > FontAwesomeIcon {
+    justify-content: space-between;
   }
   /* background-color: #e85b26; */
 `;

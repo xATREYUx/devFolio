@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { TopMenuContainer } from "./top-menu-styles.js";
-import { Container, Column } from "../../shared/shared.styles";
+import { TopMenuContainer, LoggedInIcons } from "./top-menu-styles.js";
+import { Container, Column, Row } from "../../shared/shared.styles";
+import Button from "../../shared/form-elements/button";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { appendErrors, useForm } from "react-hook-form";
 
 import AuthContext from "../../shared/context/authContext";
@@ -10,7 +11,12 @@ import AuthContext from "../../shared/context/authContext";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOutAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSignOutAlt,
+  faEdit,
+  faCode,
+  faUserAstronaut,
+} from "@fortawesome/free-solid-svg-icons";
 
 const TopMenu = () => {
   const [authState, setAuthState, login, logout] = useContext(AuthContext);
@@ -49,40 +55,49 @@ const TopMenu = () => {
   return (
     <TopMenuContainer>
       <Column className="top-left">
-        <div>@mattattheworld</div>
+        <Button to="/">@mattattheworld</Button>
       </Column>
-      <Column></Column>
+      <Column className="top-center"></Column>
       <Column className="top-right">
         {!authState.isLoggedIn && (
-          <form onSubmit={handleSubmit(submitLogin)}>
-            <input
-              type="text"
-              placeholder="Email"
-              name="email"
-              ref={register}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              ref={register}
-            />
-            {appendErrors.password && <p>{appendErrors.password.message}</p>}
-            <button type="submit" className="top-menu-submit">
-              <FontAwesomeIcon
-                icon={faSignOutAlt}
-                color="#E75B26"
-                onClick={logoutHandler}
+          <Row>
+            <form onSubmit={handleSubmit(submitLogin)}>
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                ref={register}
               />
-            </button>
-          </form>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                ref={register}
+              />
+              {appendErrors.password && <p>{appendErrors.password.message}</p>}
+              <button type="submit" className="top-menu-submit">
+                <FontAwesomeIcon
+                  icon={faCode}
+                  color="#E75B26"
+                  onClick={logoutHandler}
+                />
+              </button>
+            </form>{" "}
+          </Row>
         )}
         {authState.isLoggedIn && (
-          <FontAwesomeIcon
-            icon={faSignOutAlt}
-            color="#E75B26"
-            onClick={logoutHandler}
-          />
+          <div className="logged-in-icons">
+            <FontAwesomeIcon
+              icon={faUserAstronaut}
+              color="#E75B26"
+              onClick={() => history.push("/admin-page")}
+            />
+            <FontAwesomeIcon
+              icon={faSignOutAlt}
+              color="#E75B26"
+              onClick={logoutHandler}
+            />
+          </div>
         )}
       </Column>
     </TopMenuContainer>
