@@ -8,19 +8,20 @@ export const TopMenuContainer = styled.div`
   align-items: center;
 
   .top-right {
+    display: flex;
     margin: 20px;
     input {
       width: 100px;
       margin: 3px;
     }
-
-      .logged-in-icons-container {
     justify-content: flex-end;
-    display: flex;
-}
-.logged-in-icon{
-  margin: 5px
-}
+
+    .logged-in-icons-container {
+      display: flex;
+    }
+    .logged-in-icon {
+      margin: 5px;
+    }
   }
 
   .top-left {

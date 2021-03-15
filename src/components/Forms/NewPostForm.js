@@ -5,14 +5,18 @@ import { appendErrors, useForm } from "react-hook-form";
 
 import AuthContext from "../../shared/context/authContext";
 import { useHttpClient } from "../../shared/hooks/http-hook";
+import ImageUpload from "../../shared/form-elements/image-upload";
 
 const NewPostForm = () => {
   const [authState, setAuthState, login, logout] = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
+  console.log("register", register);
   const { sendRequest } = useHttpClient();
   const [formData, setFormData] = useState();
+
   const submitPost = async (data) => {
     try {
+      console.log("send data", data);
       await sendRequest(
         "http://localhost:5000/api/posts",
         "POST",
@@ -48,25 +52,29 @@ const NewPostForm = () => {
           placeholder="Caption"
           name="caption"
           ref={register}
-        /><br />
-        <label>Content</label><br />
+        />
+        <br />
+        <label>Content</label>
+        <br />
         <input
           type="textarea"
           placeholder="Content"
           name="content"
           ref={register}
-        /><br />
+        />
+        <br />
         <label>Image</label>
         <br />
-        <input
+        {/* <input
           type="text"
           placeholder="Image"
           name="cardImage"
           ref={register}
-        />
+        /> */}
+        <ImageUpload name="cardImage" inputRef={register} />
+        {/* <input ref={register} name="cardImage" type="file" /> */}
         {appendErrors.password && <p>{appendErrors.password.message}</p>}
         <br />
-
         <input type="submit" />
       </form>
     </NewPostFormContainer>
