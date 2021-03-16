@@ -56,11 +56,11 @@ export const SectionContainer = styled.div`
   }
 `;
 
-export const Title = styled.div`
-  margin: 30px 0 50px 0;
-  font-size: xx-large;
-  color: white;
-`;
+// export const Title = styled.div`
+//   margin: 30px 0 50px 0;
+//   font-size: xx-large;
+//   color: white;
+// `;
 export const AboutMeContainer = styled.div`
   display: flex;
   position: relative;

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
+
 .App {
   text-align: center;
 }
@@ -37,8 +39,8 @@
   }
 }
 
-.app-container{
+.app-container {
   display: flex;
   flex-direction: column;
-  width: 100vw
+  width: 100vw;
 }

@@ -5,8 +5,8 @@ export const PostsSectionContainer = styled.div``;
 export const PostListContainer = styled.div`
   display: flex;
   padding: 1rem;
-  width: 350px;
-  height: 200px;
+  width: 70%;
+
   background-color: white;
   /* border: 1px solid black; */
   border-radius: 20px;

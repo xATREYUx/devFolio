@@ -2,10 +2,9 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import {
   HomePageContainer,
   SectionContainer,
-  Title,
   AboutMeContainer,
 } from "./home-page.styles";
-
+import { Title } from "../../shared/shared.styles";
 // import HomeMidSectionOne from "../../components/HomeMidSections/HomeMidSectionOne";
 // import SectionTwo from "./home-page-components/section-two";
 import { useHttpClient } from "../../shared/hooks/http-hook";
