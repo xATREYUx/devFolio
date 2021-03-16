@@ -4,7 +4,7 @@ import {
   SectionContainer,
   AboutMeContainer,
 } from "./home-page.styles";
-import { Title } from "../../shared/shared.styles";
+import { Column, Title, FlexBreak } from "../../shared/shared.styles";
 // import HomeMidSectionOne from "../../components/HomeMidSections/HomeMidSectionOne";
 // import SectionTwo from "./home-page-components/section-two";
 import { useHttpClient } from "../../shared/hooks/http-hook";
@@ -67,32 +67,36 @@ const HomePage = (props) => {
       <SectionContainer>
         <BlobTop className="backBlobTop" />
         <AnimationCoupleSitting />
-        <div className="section-column column-left">
-          <Title>React Engineering</Title>
-          <PostList posts={loadedPosts} />
-        </div>
-        <div className="section-column column-right">
-          <ProfileSection />
-          <AnimationLookDown />
-          <AnimationFreeFall />
-          <AboutMeContainer className="aboutMeContiner">
-            <div className="aboutMeText">
-              Code is salvation. Supercharging processes with tech is fun. Red
-              pill, all day. Redux rocks. Teach script to kids. I got components
-              for days. StackOverflow amazes me. I like them styled with Sass.
-              More beeps and boops. Keep renders down. Make javascript your
-              b****. Captain Archer is the best starship Captain; change my
-              mind. I could have loved Cary Grant. Data, Data, Data. If google
-              can’t answer your question, you’re asking the wrong one. Must
-              learn more Python. "The jungian thing." It’s only logical. K. I.
-              S. S. Dare to dream. Covid sucks. Dark mode 24/7. The Rock for
-              President. Birds & squirrels, home runs & touchdowns. Thrive,
-              don’t survive. Port in, zone out. Cable guys don’t know what a
-              packet is. I scream love and punk rock at the sky. There are
-              levels to this game.
+        <Column>
+          <div className="section-column column-left">
+            <Title>React Engineering</Title>
+            <PostList posts={loadedPosts} />
+          </div>
+        </Column>
+        <Column>
+          <div className="section-column column-right">
+            <ProfileSection />
+            <AnimationLookDown />
+            <AnimationFreeFall />
+            <AboutMeContainer className="aboutMeContiner">
+              <div className="aboutMeText">
+                Code is salvation. Supercharging processes with tech is fun. Red
+                pill, all day. Redux rocks. Teach script to kids. I got components
+                for days. StackOverflow amazes me. I like them styled with Sass.
+                More beeps and boops. Keep renders down. Make javascript your
+                b****. Captain Archer is the best starship Captain; change my
+                mind. I could have loved Cary Grant. Data, Data, Data. If google
+                can’t answer your question, you’re asking the wrong one. Must
+                learn more Python. "The jungian thing." It’s only logical. K. I.
+                S. S. Dare to dream. Covid sucks. Dark mode 24/7. The Rock for
+                President. Birds & squirrels, home runs & touchdowns. Thrive,
+                don’t survive. Port in, zone out. Cable guys don’t know what a
+                packet is. I scream love and punk rock at the sky. There are
+                levels to this game.
             </div>
-          </AboutMeContainer>
-        </div>
+            </AboutMeContainer>
+          </div>
+        </Column>
       </SectionContainer>
       {/* <HomeMidSectionOne posts={loadedPosts} /> */}
       <BubbleBlobs className="bubbleBlobs" ref={bubblesRef} />

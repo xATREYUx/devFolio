@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HomePageContainer = styled.div`
   position: relative;
   display: flex;
+    flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   min-height: 2000px;
@@ -30,7 +31,8 @@ export const SectionContainer = styled.div`
   width: 100%;
   position: relative;
   display: flex;
-  top: -75px;
+  flex-wrap: wrap;
+  top: -95px;
   .backBlobTop {
     z-index: -1;
     position: absolute;

@@ -4,6 +4,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
