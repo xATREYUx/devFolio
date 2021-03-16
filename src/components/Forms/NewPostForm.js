@@ -12,25 +12,36 @@ const NewPostForm = () => {
   const { register, handleSubmit } = useForm();
   console.log("register", register);
   const { sendRequest } = useHttpClient();
-  const [formData, setFormData] = useState();
+  const [pickedCardImage, setPickedCardImage] = useState();
 
   const submitPost = async (data) => {
     try {
       console.log("send data", data);
-      await sendRequest(
-        "http://localhost:5000/api/posts",
-        "POST",
-        JSON.stringify({
-          title: data.title,
-          caption: data.caption,
-          content: data.content,
-          cardImage: data.cardImage,
-        }),
-        {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + authState.token,
-        }
-      );
+      console.log("send pickedCardImage", pickedCardImage);
+
+      const formData = new FormData();
+      formData.append("title", data.title);
+      formData.append("caption", data.caption);
+      formData.append("content", data.content);
+      formData.append("cardImage", pickedCardImage);
+      await sendRequest("http://localhost:5000/api/posts", "POST", formData, {
+        Authorization: "Bearer " + authState.token,
+      });
+
+      // await sendRequest(
+      //   "http://localhost:5000/api/posts",
+      //   "POST",
+      //   {
+      //     title: data.title,
+      //     caption: data.caption,
+      //     content: data.content,
+      //     cardImage: data.image[0],
+      //   },
+      //   {
+      //     "Content-Type": "application/json",
+      //     Authorization: "Bearer " + authState.token,
+      //   }
+      // );
     } catch (err) {
       console.log("submitPost err", err);
     }
@@ -71,7 +82,11 @@ const NewPostForm = () => {
           name="cardImage"
           ref={register}
         /> */}
-        <ImageUpload name="cardImage" inputRef={register} />
+        <ImageUpload
+          name="cardImage"
+          inputRef={register}
+          selectedImage={setPickedCardImage}
+        />
         {/* <input ref={register} name="cardImage" type="file" /> */}
         {appendErrors.password && <p>{appendErrors.password.message}</p>}
         <br />

@@ -15,9 +15,11 @@ const ImageUpload = (props) => {
       console.log("file not loaded");
       return;
     }
+    console.log("file picked", file);
     const fileReader = new FileReader();
     fileReader.onload = () => {
       setPreviewUrl(fileReader.result);
+      props.selectedImage(file);
     };
     fileReader.readAsDataURL(file);
   }, [file]);
@@ -27,8 +29,8 @@ const ImageUpload = (props) => {
     let pickedFile;
     let fileIsValid = isValid;
     if (event.target.files && event.target.files.length === 1) {
-      console.log("pickedHandler target.files === 1");
       pickedFile = event.target.files[0];
+      console.log("pickedFile", pickedFile.name);
       setFile(pickedFile);
       setIsValid(true);
       fileIsValid = true;
@@ -48,8 +50,7 @@ const ImageUpload = (props) => {
   return (
     <ImageUploadContainer>
       <input
-        name={props.name}
-        ref={filePickerRef}
+         ref={filePickerRef}
         style={{ display: "none" }}
         type="file"
         accept=".jpg,.png,.jpeg"
