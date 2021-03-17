@@ -15,10 +15,8 @@ export const Container = styled.div`
 
 export const Row = styled.div`
   display: flex;
-  /* display: flex;
-  flex-direction: column;
-  position: relative;
-  /* padding: 10px; */
+  flex: 1;
+    /* padding: 10px; */
   /* min-width: 850px; */
   /* align-items: center; */
   /* margin: auto; */

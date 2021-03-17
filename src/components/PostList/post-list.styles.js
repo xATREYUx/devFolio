@@ -15,14 +15,32 @@ export const PostListContainer = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 
   .col-right {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ .caption-row{
+  flex: 1;
+  align-items: end;
+}
+.button-row{
+  flex: 1;
+    align-items: end;
+
+}
+
   }
+  .col-left {
+display: flex;
+align-items: center;
+         img {
+       height: 110px;
+      width: 110px;
+     }
+   }
 
   .card-left {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    height: 100%;
+     height: 100%;
     justify-content: flex-end;
     img {
       bottom: 0px;
@@ -34,8 +52,7 @@ export const PostListContainer = styled.div`
     flex-direction: column;
     height: 100%;
     display: flex;
-    flex: 1;
-    justify-content: center;
+     justify-content: center;
     align-items: center;
     text-align: center;
 
