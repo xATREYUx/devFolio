@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage/home-page";
 import AdminPage from "./pages/AdminPage/admin-page";
 import AuthPage from "./pages/AuthPage/auth-page";
+import PostPage from "./pages/PostPage/post-page";
 import TopMenu from "./components/TopMenu/TopMenu";
 import PrivateRoute from "./shared/PrivateRoute";
 
@@ -25,6 +26,7 @@ const App = () => {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/auth-page" component={AuthPage} />
             <PrivateRoute exact path="/admin-page" component={AdminPage} />
+            <Route exact path="/posts/:pid" component={PostPage} />
           </Switch>
         </Router>
       </AuthContext.Provider>
@@ -33,3 +35,5 @@ const App = () => {
 };
 
 export default App;
+
+//to connect clients and streamline processes using information texhnology

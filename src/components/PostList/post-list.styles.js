@@ -33,6 +33,8 @@ export const PostListContainer = styled.div`
     }
   }
   .col-left {
+    display: flex;
+    align-items: center;
     img {
       height: 110px;
       width: 110px;
