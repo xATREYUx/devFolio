@@ -31,11 +31,11 @@ const PostList = (props) => {
           />
         </Column>
         <Column className="col-right">
-          <Row className="caption-row">
+          <Row className="caption-area">
             <Paragraph className="card-caption">{post.caption}</Paragraph>
             {/* <CardButtonArea> */}
           </Row>
-          <Row className="button-row">
+          <Row className="button-area">
             <Button onClick={() => goToPost(post)} className="card-button">
               {post.title}
             </Button>

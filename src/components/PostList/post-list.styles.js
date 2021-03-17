@@ -4,9 +4,9 @@ export const PostsSectionContainer = styled.div``;
 
 export const PostListContainer = styled.div`
   display: flex;
-  padding: 1rem;
+  /* padding: 1rem; */
   width: 70%;
-  height: 150px;
+  height: 200px;
   background-color: white;
   /* border: 1px solid black; */
   border-radius: 20px;
@@ -17,30 +17,30 @@ export const PostListContainer = styled.div`
   .col-right {
     display: flex;
     flex-direction: column;
-  align-items: center;
-  justify-content: center;
- .caption-row{
-  flex: 1;
-  align-items: end;
-}
-.button-row{
-  flex: 1;
-    align-items: end;
+    padding: 1rem;
 
-}
-
+    /* align-items: center; */
+    /* justify-content: center; */
+    .caption-area {
+      flex: 1;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .button-area {
+      flex: 1;
+      justify-content: center;
+      align-items: flex-end;
+    }
   }
   .col-left {
-display: flex;
-align-items: center;
-         img {
-       height: 110px;
+    img {
+      height: 110px;
       width: 110px;
-     }
-   }
+    }
+  }
 
   .card-left {
-     height: 100%;
+    height: 100%;
     justify-content: flex-end;
     img {
       bottom: 0px;
@@ -52,7 +52,7 @@ align-items: center;
     flex-direction: column;
     height: 100%;
     display: flex;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
     text-align: center;
 
