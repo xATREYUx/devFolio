@@ -93,13 +93,13 @@ const TopMenu = () => {
         {authState.isLoggedIn && (
           <div className=" ">
             <FontAwesomeIcon
-              className="logged-in-icons"
+              className="logged-in-icon"
               icon={faUserAstronaut}
-              // color="#E75B26"
+              color="#E75B26"
               onClick={() => history.push("/admin-page")}
             />
             <FontAwesomeIcon
-              className="logged-in-icons"
+              className="logged-in-icon"
               icon={faSignOutAlt}
               color="#E75B26"
               onClick={logoutHandler}
