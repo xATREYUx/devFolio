@@ -55,10 +55,12 @@ export const InputFieldContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   .button {
-    font: inherit;
+    /* font: inherit; */
     padding: 0.5rem 1.5rem;
+    border: none;
+
     /* border: 1px solid #ff0055; */
-    border-radius: 4px;
+    border-radius: 5px;
     background: #e85b25;
     color: white;
     cursor: pointer;
@@ -75,7 +77,7 @@ export const ButtonContainer = styled.div`
   .button:hover,
   .button:active {
     /* background: #ff4382; */
-    border-color: #ff4382;
+    /* border-color: #ff4382; */
   }
 
   .button--inverse {

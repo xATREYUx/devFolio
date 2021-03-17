@@ -34,8 +34,7 @@ export const PostListContainer = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    .card-caption {
-    }
+
     .card-button {
       height: 30px;
       width: 150px;

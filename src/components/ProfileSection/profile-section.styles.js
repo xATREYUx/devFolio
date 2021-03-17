@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NamePlateContainer = styled.div`
-  /* margin: 20px 0 20px 0; */
+  margin: 20px 0 20px 0;
   color: white;
   text-align: center;
   h1,
@@ -49,4 +49,15 @@ export const ProfileSectionContainer = styled.div`
     background: white !important;
     border-radius: 10px;
   }
+`;
+
+export const FirstName = styled.div`
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 30px;
+`;
+
+export const LastName = styled.div`
+  font-family: "Kufam", cursive;
+  font-size: 31px;
+  padding-top: 1px;
 `;
