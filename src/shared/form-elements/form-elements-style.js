@@ -55,19 +55,19 @@ export const InputFieldContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   .button {
-    /* font: inherit; */
+    width: 150px;
     padding: 0.5rem 1.5rem;
     border: none;
-
     /* border: 1px solid #ff0055; */
     border-radius: 5px;
     background: #e85b25;
     color: white;
     cursor: pointer;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
     text-decoration: none;
     display: inline-block;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    font-family: "Kufam", cursive;
   }
 
   .button:focus {

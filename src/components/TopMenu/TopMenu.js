@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { TopMenuContainer, LoggedInIcons } from "./top-menu-styles.js";
-import { Container, Column, Row } from "../../shared/shared.styles";
+import { Container, Column, Row, Paragraph } from "../../shared/shared.styles";
 import Button from "../../shared/form-elements/button";
 
 import { useHistory, Link } from "react-router-dom";
@@ -55,13 +55,13 @@ const TopMenu = () => {
   return (
     <TopMenuContainer>
       <div className="top-left">
-        <div
+        <Paragraph
           onClick={() => {
             history.push("/");
           }}
         >
           @mattattheworld
-        </div>
+        </Paragraph>
       </div>
       <div className="top-right">
         {!authState.isLoggedIn && (

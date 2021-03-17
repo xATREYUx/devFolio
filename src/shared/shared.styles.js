@@ -15,7 +15,6 @@ export const Container = styled.div`
 
 export const Row = styled.div`
   display: flex;
-  display: row;
   /* display: flex;
   flex-direction: column;
   position: relative;
@@ -32,14 +31,14 @@ export const Column = styled.div`
 `;
 
 export const Title = styled.div`
-  margin: 30px 0 50px 0;
-  font-size: 3.5rem;
+  margin: 10px 0 0px 0;
+  font-size: 3rem;
   color: white;
   font-family: "Allura", cursive;
 `;
 
 export const Paragraph = styled.div`
-  color: white;
+  font-family: "Kufam", cursive;
 `;
 
 export const FlexBreak = styled.div``;

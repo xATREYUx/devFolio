@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../../shared/images/logo.svg";
-import { HeaderContainer } from "./header-footer.styles";
+import { HeaderContainer, SubTitle } from "./header-footer.styles";
 
 const Header = () => {
   const [subTitle, setSubtitle] = useState("");
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Logo className="logo" />
-      <h1>{subTitle}</h1>
+      <SubTitle>{subTitle}</SubTitle>
       {/* <Birds className="birds" /> */}
     </HeaderContainer>
   );

@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import Button from "../../shared/form-elements/button";
-import { PostListContainer, CardButtonArea, Row } from "./post-list.styles";
+import { PostListContainer, CardButtonArea } from "./post-list.styles";
+import { Column, Paragraph, Row } from "../../shared/shared.styles";
 import Climber from "../../shared/images/IMG_2280.jpeg";
 import { useHistory } from "react-router-dom";
 
@@ -23,22 +24,23 @@ const PostList = (props) => {
   const foundPosts = props.posts.map((post) => {
     return (
       <PostListContainer key={post.id}>
-        <div className="card-left">
+        <Column className="col-left">
           <img
             src={`http://localhost:5000/${post.cardImage}`}
             alt={post.title}
           />
-        </div>
-        <div className="card-right">
-          <h2 className="card-caption">{post.caption}</h2>
-          <CardButtonArea>
-            <Row>
-              <Button onClick={() => goToPost(post)} className="card-button">
-                {post.title}
-              </Button>
-            </Row>
-
-            {/* <Row>
+        </Column>
+        <Column className="col-right">
+          <Row>
+            <Paragraph className="card-caption">{post.caption}</Paragraph>
+            {/* <CardButtonArea> */}
+          </Row>
+          <Row>
+            <Button onClick={() => goToPost(post)} className="card-button">
+              {post.title}
+            </Button>
+          </Row>
+          {/* <Row>
               {authContext.userId ? (
                 <>
                   <FontAwesomeIcon
@@ -54,8 +56,8 @@ const PostList = (props) => {
                 </>
               ) : null}
             </Row> */}
-          </CardButtonArea>
-        </div>
+          {/* </CardButtonArea> */}
+        </Column>
       </PostListContainer>
     );
   });

@@ -6,13 +6,17 @@ export const PostListContainer = styled.div`
   display: flex;
   padding: 1rem;
   width: 70%;
-
+  height: 150px;
   background-color: white;
   /* border: 1px solid black; */
   border-radius: 20px;
   overflow: hidden;
   margin: 30px auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+
+  .col-right {
+    text-align: center;
+  }
 
   .card-left {
     display: flex;
@@ -35,19 +39,19 @@ export const PostListContainer = styled.div`
     align-items: center;
     text-align: center;
 
-    .card-button {
+    /* .card-button {
       height: 30px;
       width: 150px;
       border: 1px solid black;
       border-radius: 5px;
       background-color: "orange";
-    }
+    } */
   }
 `;
 
 export const CardButtonArea = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 `;
 
 export const Row = styled.div`

@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const HomePageContainer = styled.div`
   position: relative;
   display: flex;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  min-height: 2000px;
+  min-height: 3000px;
   /* width: 100vw; */
 
   .backBlobBottom {
@@ -32,7 +32,7 @@ export const SectionContainer = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  top: -95px;
+  top: -85px;
   .backBlobTop {
     z-index: -1;
     position: absolute;
@@ -75,6 +75,6 @@ export const AboutMeContainer = styled.div`
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     width: 70%;
-    color: #d4d4d4;
+    color: white;
   }
 `;
