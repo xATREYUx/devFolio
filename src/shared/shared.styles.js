@@ -28,7 +28,7 @@ export const Row = styled.div`
 export const Column = styled.div`
   flex: 1;
   justify-content: center;
-  min-width: 350px
+  /* min-width: 320px; */
 `;
 
 export const Title = styled.div`
@@ -42,6 +42,4 @@ export const Paragraph = styled.div`
   color: white;
 `;
 
-export const FlexBreak = styled.div`
-
- `
+export const FlexBreak = styled.div``;
