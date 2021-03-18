@@ -9,16 +9,14 @@ export const PostListContainer = styled.div`
   width: 100%;
   height: 200px;
   background-color: white;
-  /* border: 1px solid black; */
   border-radius: 20px;
   overflow: hidden;
   margin: 30px auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-
+min-width: 355px;
   .caption-area {
     color: white;
     padding: 10px 0px 5px 0px;
-    /* position: absolute; */
     height: auto;
     width: 100%;
     background-color: #e75b26;
@@ -27,32 +25,36 @@ export const PostListContainer = styled.div`
   .col-right {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    flex: 1;
-
+     padding: 0px;
+     height: 100%;
     /* align-items: center; */
     /* justify-content: center; */
     .title-area {
       flex: 1;
-      justify-content: center;
+      flex-direction: row;
       align-items: flex-end;
-    }
+      padding: 0px 10px 0px 10px
+     }
+
     .button-area {
       flex: 1;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
+      flex-direction: row;
     }
   }
   .col-left {
+    position: relative;
     display: flex;
-    flex-direction: column;
     flex: 1;
-
     align-items: center;
+    padding: 0px;
+    overflow: hidden;
     img {
       height: 100%;
       width: 100%;
-    }
+      position: absolute;
+     }
   }
 
   .card-left {

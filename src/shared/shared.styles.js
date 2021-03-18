@@ -23,11 +23,11 @@ export const Row = styled.div`
 `;
 
 export const Column = styled.div`
-   flex: 1;
+  flex: 1;
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding: 1rem
+  padding: 0px 1rem 0px 1rem;
   /* min-width: 320px; */
 `;
 

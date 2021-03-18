@@ -77,7 +77,7 @@ const NewPostForm = () => {
           type="textarea"
           placeholder="Content"
           name="content"
-          cols="55"
+          cols="30"
           rows="10"
           ref={register}
         />
