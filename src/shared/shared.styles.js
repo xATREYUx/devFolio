@@ -23,11 +23,11 @@ export const Row = styled.div`
 `;
 
 export const Column = styled.div`
-  flex: 1;
-  flex-direction: column;
+   flex: 1;
   align-items: center;
   text-align: center;
   justify-content: center;
+  padding: 1rem
   /* min-width: 320px; */
 `;
 
@@ -36,7 +36,6 @@ export const Title = styled.div`
   font-size: 3rem;
   color: white;
   font-family: "Allura", cursive;
-
 `;
 
 export const Paragraph = styled.div`
