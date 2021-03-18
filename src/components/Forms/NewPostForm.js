@@ -65,8 +65,9 @@ const NewPostForm = () => {
         <br />
         <input
           type="text"
-          placeholder="Caption"
+          placeholder="42 Charachter Limit"
           name="caption"
+          maxLength="42"
           ref={register}
         />
         <br />
@@ -76,6 +77,8 @@ const NewPostForm = () => {
           type="textarea"
           placeholder="Content"
           name="content"
+          cols="55"
+          rows="10"
           ref={register}
         />
         <br />

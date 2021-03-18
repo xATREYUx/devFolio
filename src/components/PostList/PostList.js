@@ -34,7 +34,7 @@ const PostList = (props) => {
           </Column>
           <Column className="col-right">
             <Row className="title-area">
-              <Paragraph className="card-title">{post.title}</Paragraph>
+              <h2 className="card-title">{post.title}</h2>
               {/* <Title>{post.title}</Title> */}
 
               {/* <CardButtonArea> */}

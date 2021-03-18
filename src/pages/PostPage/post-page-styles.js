@@ -30,7 +30,8 @@ export const PostPageContainer = styled.div`
     border: 1px solid black;
     border-radius: 15px;
     min-height: 300px;
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px 40px 30px;
+    white-space: pre-wrap;
   }
   .logo {
     height: 10vw;

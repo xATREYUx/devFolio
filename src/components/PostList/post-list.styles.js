@@ -49,8 +49,8 @@ export const PostListContainer = styled.div`
 
     align-items: center;
     img {
-      height: 110px;
-      width: 110px;
+      height: 100%;
+      width: 100%;
     }
   }
 
