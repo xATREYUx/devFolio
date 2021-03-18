@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Container, Column } from "../../shared/shared.styles"
+import { Container, Column } from "../../shared/shared.styles";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import AuthContext from "../../shared/context/authContext";
 import { AdminPageContainer } from "./admin-page-styles";
@@ -27,9 +27,10 @@ const AdminPage = () => {
     };
     fetchPosts();
   }, [authState.userId, sendRequest]);
+
   return (
     <AdminPageContainer>
-      <Column>
+      <Column id="admin-col-left">
         <PostList posts={loadedPosts} />
       </Column>
       <Column>

@@ -29,7 +29,6 @@ export const HomePageContainer = styled.div`
 
 export const SectionContainer = styled.div`
   width: 100%;
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   top: -85px;
@@ -47,7 +46,7 @@ export const SectionContainer = styled.div`
   }
 
   .section-column.column-left {
-    text-align: center;
+    /* text-align: center; */
   }
 
   .section-column.column-right {

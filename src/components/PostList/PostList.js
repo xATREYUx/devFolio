@@ -23,7 +23,7 @@ const PostList = (props) => {
 
   const foundPosts = props.posts.map((post) => {
     return (
-      <PostListContainer key={post.id}>
+      <PostListContainer key={post.id} id="post-list-container">
         <Paragraph className="caption-area">{post.caption}</Paragraph>
         <Row>
           <Column className="col-left">
