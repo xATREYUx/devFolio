@@ -40,8 +40,7 @@ export const SectionContainer = styled.div`
     height: auto;
   }
 
-  .section-column {
-    flex: 1;
+  .home-left-col-style {
     padding-top: 20px;
     /* padding: auto; */
     /* text-align: center; */

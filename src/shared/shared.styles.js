@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Row = styled.div`
   display: flex;
   flex: 1;
-    /* padding: 10px; */
+  /* padding: 10px; */
   /* min-width: 850px; */
   /* align-items: center; */
   /* margin: auto; */
@@ -24,6 +24,9 @@ export const Row = styled.div`
 
 export const Column = styled.div`
   flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   justify-content: center;
   /* min-width: 320px; */
 `;
@@ -33,6 +36,7 @@ export const Title = styled.div`
   font-size: 3rem;
   color: white;
   font-family: "Allura", cursive;
+
 `;
 
 export const Paragraph = styled.div`

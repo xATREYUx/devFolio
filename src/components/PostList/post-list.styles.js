@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const PostsSectionContainer = styled.div``;
 
 export const PostListContainer = styled.div`
+  position: relative;
   display: flex;
+  flex-direction: column;
   /* padding: 1rem; */
   width: 70%;
   height: 200px;
@@ -14,6 +16,15 @@ export const PostListContainer = styled.div`
   margin: 30px auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 
+  .caption-area {
+    color: white;
+    padding: 10px 0px 5px 0px;
+    /* position: absolute; */
+    height: auto;
+    width: 100%;
+    background-color: #e75b26;
+  }
+
   .col-right {
     display: flex;
     flex-direction: column;
@@ -21,7 +32,7 @@ export const PostListContainer = styled.div`
 
     /* align-items: center; */
     /* justify-content: center; */
-    .caption-area {
+    .title-area {
       flex: 1;
       justify-content: center;
       align-items: flex-end;
@@ -34,6 +45,8 @@ export const PostListContainer = styled.div`
   }
   .col-left {
     display: flex;
+    flex-direction: column;
+
     align-items: center;
     img {
       height: 110px;

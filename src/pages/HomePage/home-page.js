@@ -73,13 +73,13 @@ const HomePage = (props) => {
         <BlobTop className="backBlobTop" />
         <AnimationCoupleSitting />
         <Column>
-          <div className="section-column column-left">
+          <div className="home-left-col-style">
             <Title>React Engineering</Title>
             <PostList posts={loadedPosts} />
           </div>
         </Column>
         <Column>
-          <div className="section-column column-right">
+          <div>
             <ProfileSection />
             <AnimationLookDown />
             <AnimationFreeFall />

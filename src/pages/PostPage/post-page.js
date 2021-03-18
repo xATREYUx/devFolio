@@ -14,11 +14,16 @@ const PostPage = (props) => {
       <div className="post-image-section-container">
         <div className="post-image-container">
           <img
-            src={`http://localhost:5000/${postDetails.cardImage}`}
-            alt={postDetails.title}
+            src={`http://localhost:5000/${postDetails.postImageOne}`}
+            alt={postDetails.postImageOne}
           />
         </div>
-        <div className="post-image-container"></div>
+        <div className="post-image-container">
+          <img
+            src={`http://localhost:5000/${postDetails.postImageTwo}`}
+            alt={postDetails.postImageTwo}
+          />
+        </div>
       </div>
       <div className="post-section-container">
         <h1>{postDetails.title}</h1>

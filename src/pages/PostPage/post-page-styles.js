@@ -14,7 +14,7 @@ export const PostPageContainer = styled.div`
     height: 30vw;
     width: 30vw;
     border: 1px dashed gray;
-    img{
+    img {
       height: 100%;
       width: 100%;
     }
@@ -37,4 +37,6 @@ export const PostPageContainer = styled.div`
     align-self: center;
     transform: translateY(-55px);
   }
+
+
 `;

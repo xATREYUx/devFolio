@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import Button from "../../shared/form-elements/button";
 import { PostListContainer, CardButtonArea } from "./post-list.styles";
-import { Column, Paragraph, Row } from "../../shared/shared.styles";
+import { Column, Paragraph, Row, Title } from "../../shared/shared.styles";
 import Climber from "../../shared/images/IMG_2280.jpeg";
 import { useHistory } from "react-router-dom";
 
@@ -24,23 +24,28 @@ const PostList = (props) => {
   const foundPosts = props.posts.map((post) => {
     return (
       <PostListContainer key={post.id}>
-        <Column className="col-left">
-          <img
-            src={`http://localhost:5000/${post.cardImage}`}
-            alt={post.title}
-          />
-        </Column>
-        <Column className="col-right">
-          <Row className="caption-area">
-            <Paragraph className="card-caption">{post.caption}</Paragraph>
-            {/* <CardButtonArea> */}
-          </Row>
-          <Row className="button-area">
-            <Button onClick={() => goToPost(post)} className="card-button">
-              {post.title}
-            </Button>
-          </Row>
-          {/* <Row>
+        <Paragraph className="caption-area">{post.caption}</Paragraph>
+        <Row>
+          <Column className="col-left">
+            <img
+              src={`http://localhost:5000/${post.cardImage}`}
+              alt={post.title}
+            />
+          </Column>
+          <Column className="col-right">
+            <Row className="title-area">
+              <Paragraph className="card-title">{post.title}</Paragraph>
+              {/* <Title>{post.title}</Title> */}
+
+              {/* <CardButtonArea> */}
+            </Row>
+            <Row className="button-area">
+              <Button onClick={() => goToPost(post)} className="card-button">
+                {/* {post.title} */}
+                View Post
+              </Button>
+            </Row>
+            {/* <Row>
               {authContext.userId ? (
                 <>
                   <FontAwesomeIcon
@@ -56,8 +61,9 @@ const PostList = (props) => {
                 </>
               ) : null}
             </Row> */}
-          {/* </CardButtonArea> */}
-        </Column>
+            {/* </CardButtonArea> */}
+          </Column>
+        </Row>
       </PostListContainer>
     );
   });

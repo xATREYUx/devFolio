@@ -13,6 +13,8 @@ const NewPostForm = () => {
   console.log("register", register);
   const { sendRequest } = useHttpClient();
   const [pickedCardImage, setPickedCardImage] = useState();
+  const [pickedCardImageOne, setPickedCardImageOne] = useState();
+  const [pickedCardImageTwo, setPickedCardImageTwo] = useState();
 
   const submitPost = async (data) => {
     try {
@@ -24,6 +26,9 @@ const NewPostForm = () => {
       formData.append("caption", data.caption);
       formData.append("content", data.content);
       formData.append("cardImage", pickedCardImage);
+      formData.append("postImageOne", pickedCardImageOne);
+      formData.append("postImageTwo", pickedCardImageTwo);
+
       await sendRequest("http://localhost:5000/api/posts", "POST", formData, {
         Authorization: "Bearer " + authState.token,
       });
@@ -67,14 +72,14 @@ const NewPostForm = () => {
         <br />
         <label>Content</label>
         <br />
-        <input
+        <textarea
           type="textarea"
           placeholder="Content"
           name="content"
           ref={register}
         />
         <br />
-        <label>Image</label>
+        <label>Card Image</label>
         <br />
         {/* <input
           type="text"
@@ -86,6 +91,18 @@ const NewPostForm = () => {
           name="cardImage"
           inputRef={register}
           selectedImage={setPickedCardImage}
+        />
+        <label>Post Image One</label>
+        <ImageUpload
+          name="postImageOne"
+          inputRef={register}
+          selectedImage={setPickedCardImageOne}
+        />
+        <label>Post Image Two</label>
+        <ImageUpload
+          name="postImageTwo"
+          inputRef={register}
+          selectedImage={setPickedCardImageTwo}
         />
         {/* <input ref={register} name="cardImage" type="file" /> */}
         {appendErrors.password && <p>{appendErrors.password.message}</p>}
