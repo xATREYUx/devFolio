@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 100vh;
   min-height: 600px;

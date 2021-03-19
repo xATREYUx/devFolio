@@ -72,7 +72,7 @@ const HomePage = (props) => {
       <SectionContainer id="section-container">
         <BlobTop className="backBlobTop" />
         <AnimationCoupleSitting />
-        <Column>
+        <Column id="section-column-left">
           <Title>React Engineering</Title>
           <PostList posts={loadedPosts} />
         </Column>

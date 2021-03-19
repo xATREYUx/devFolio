@@ -52,9 +52,10 @@ min-width: 355px;
     overflow: hidden;
     img {
       height: 100%;
-      width: 100%;
+      width: auto;
       position: absolute;
-     }
+      left: 0;
+       }
   }
 
   .card-left {

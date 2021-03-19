@@ -28,8 +28,8 @@ export const HomePageContainer = styled.div`
 `;
 
 export const SectionContainer = styled.div`
-  width: 100%;
-  display: flex;
+  position: relative;
+   display: flex;
   flex-wrap: wrap;
   top: -85px;
   .backBlobTop {
@@ -39,14 +39,8 @@ export const SectionContainer = styled.div`
     height: auto;
   }
 
-  .home-left-col-style {
-    padding-top: 20px;
-    /* padding: auto; */
-    /* text-align: center; */
-  }
-
-  .section-column.column-left {
-    /* text-align: center; */
+  #section-column-left {
+    margin-top: 20px;
   }
 
   .section-column.column-right {
