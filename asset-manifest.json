@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/devfolio/static/css/main.9199cc93.chunk.css",
+    "main.js": "/devfolio/static/js/main.9a965cdf.chunk.js",
+    "main.js.map": "/devfolio/static/js/main.9a965cdf.chunk.js.map",
+    "runtime-main.js": "/devfolio/static/js/runtime-main.124db887.js",
+    "runtime-main.js.map": "/devfolio/static/js/runtime-main.124db887.js.map",
+    "static/js/2.0f4ca0be.chunk.js": "/devfolio/static/js/2.0f4ca0be.chunk.js",
+    "static/js/2.0f4ca0be.chunk.js.map": "/devfolio/static/js/2.0f4ca0be.chunk.js.map",
+    "index.html": "/devfolio/index.html",
+    "static/css/main.9199cc93.chunk.css.map": "/devfolio/static/css/main.9199cc93.chunk.css.map",
+    "static/js/2.0f4ca0be.chunk.js.LICENSE.txt": "/devfolio/static/js/2.0f4ca0be.chunk.js.LICENSE.txt",
+    "static/media/IMG_2280.bcc3a88c.jpeg": "/devfolio/static/media/IMG_2280.bcc3a88c.jpeg",
+    "static/media/blobTop.3c2d76e1.svg": "/devfolio/static/media/blobTop.3c2d76e1.svg",
+    "static/media/bubbleBlobs.3de82aa7.svg": "/devfolio/static/media/bubbleBlobs.3de82aa7.svg",
+    "static/media/freefall.2b2b516f.svg": "/devfolio/static/media/freefall.2b2b516f.svg",
+    "static/media/girlAndBoy.a4c5f4f9.svg": "/devfolio/static/media/girlAndBoy.a4c5f4f9.svg",
+    "static/media/logo.a3d8464e.svg": "/devfolio/static/media/logo.a3d8464e.svg",
+    "static/media/profilepic@3x.d76bff47.png": "/devfolio/static/media/profilepic@3x.d76bff47.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.124db887.js",
+    "static/js/2.0f4ca0be.chunk.js",
+    "static/css/main.9199cc93.chunk.css",
+    "static/js/main.9a965cdf.chunk.js"
+  ]
+}
