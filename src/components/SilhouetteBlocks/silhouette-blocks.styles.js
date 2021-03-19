@@ -13,7 +13,7 @@ export const AnimationLookDownContainer = styled.div`
   /* left: 45px; */
   img {
     position: absolute;
-    left: -10px;
+    left: 0px;
     height: 50px;
     /* bottom: 0; */
   }
@@ -25,15 +25,13 @@ export const AnimationFreeFallContainer = styled.div`
   position: absolute;
   height: 45%;
   width: 20px;
-  /* top: 5.3vh; */
-  left: -35px;
-
+  bottom: 0px;
+  left: 0px;
   img {
     position: absolute;
     height: 30px;
-    bottom: 0;
-    left: -60;
-    transform: scaleX(-1);
+    transform: scaleX(-1) translate(35px);
+    /* transform: translate(20px); */
   }
 `;
 

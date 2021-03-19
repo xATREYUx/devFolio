@@ -21,7 +21,7 @@ const PostList = (props) => {
     history.push({ pathname: `/posts/${props.id}`, state: props });
   };
 
-  const foundPosts = props.posts.map((post) => {
+  const foundPosts = props.posts.slice(0, 5).map((post) => {
     return (
       <PostListContainer key={post.id} id="post-list-container">
         <Paragraph className="caption-area">{post.caption}</Paragraph>

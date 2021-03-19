@@ -76,11 +76,11 @@ const HomePage = (props) => {
           <Title>React Engineering</Title>
           <PostList posts={loadedPosts} />
         </Column>
-        <Column>
+        <Column id="section-column-right">
           <ProfileSection />
           <AnimationLookDown />
-          <AnimationFreeFall />
           <AboutMeContainer className="aboutMeContiner">
+            <AnimationFreeFall />
             <Paragraph className="aboutMeText">
               Code is salvation. Supercharging processes with tech is fun. Red
               pill, all day. Redux rocks. Teach script to kids. I got components

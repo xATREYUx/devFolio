@@ -43,10 +43,9 @@ export const SectionContainer = styled.div`
     margin-top: 20px;
   }
 
-  .section-column.column-right {
-    position: relative;
-    align-items: center;
-    justify-content: center;
+  #section-column-right {
+    margin-top: 20px  ;
+
   }
 `;
 
@@ -66,7 +65,7 @@ export const AboutMeContainer = styled.div`
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    width: 70%;
+    width: 60%;
     color: white;
   }
 `;
