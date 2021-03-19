@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div className="app-container">
       <AuthContext.Provider value={[authState, setAuthState, login, logout]}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <TopMenu />
           <Switch>
             <Route exact path="/" component={HomePage} />
