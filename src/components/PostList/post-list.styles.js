@@ -11,7 +11,7 @@ export const PostListContainer = styled.div`
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
-  margin: 30px auto;
+  margin: 30px auto;  
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 min-width: 355px;
   .caption-area {
