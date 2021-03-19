@@ -32,7 +32,7 @@ const App = () => {
             <Route exact path="/auth-page" component={AuthPage} />
             <PrivateRoute exact path="/admin-page" component={AdminPage} />
             <Route exact path="/posts/:pid" component={PostPage} />
-            <Redirect path="/" />
+            <Redirect to="/" />
           </Switch>
         </Router>
       </AuthContext.Provider>
