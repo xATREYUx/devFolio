@@ -10,7 +10,7 @@ import Button from "../../shared/form-elements/button";
 
 const NewPostForm = (props) => {
   const [authState, setAuthState, login, logout] = useContext(AuthContext);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   console.log("register", register);
   const { sendRequest } = useHttpClient();
   const [pickedCardImage, setPickedCardImage] = useState();
@@ -44,8 +44,9 @@ const NewPostForm = (props) => {
       );
       console.log("newpostform response", response);
       props.addNewPost((prevState) => [response.post, ...prevState]);
-      resetForm();
-    } catch (err) {
+      resetForm()
+      reset()
+     } catch (err) {
       console.log("submitPost err", err);
     }
   };

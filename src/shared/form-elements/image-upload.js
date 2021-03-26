@@ -9,11 +9,11 @@ const ImageUpload = (props) => {
   const [isValid, setIsValid] = useState(false);
    const filePickerRef = useRef(props.inputRef);
 
-  // useEffect(() => {
-  //   setPreviewUrl(null)
-  //   setFile(null)
-  //   setIsValid(false)
-  // }, [props.resetForm])
+  useEffect(() => {
+    setPreviewUrl(null)
+    setFile(null)
+    setIsValid(false)
+  }, [props.resetForm])
 
   useEffect(() => {
     if (!file) {
