@@ -6,7 +6,7 @@ export const HomePageContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  min-height: 3000px;
+  min-height: 2300px;
   /* width: 100vw; */
 
   .backBlobBottom {
@@ -29,7 +29,7 @@ export const HomePageContainer = styled.div`
 
 export const SectionContainer = styled.div`
   position: relative;
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
   top: -85px;
   .backBlobTop {
@@ -44,8 +44,7 @@ export const SectionContainer = styled.div`
   }
 
   #section-column-right {
-    margin-top: 20px  ;
-
+    margin-top: 20px;
   }
 `;
 
@@ -57,7 +56,8 @@ export const SectionContainer = styled.div`
 export const AboutMeContainer = styled.div`
   display: flex;
   position: relative;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
   .aboutMeText {
     text-align: center;
     padding: 10px;

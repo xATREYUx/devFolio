@@ -1,9 +1,10 @@
 import styled from "styled-components";
+
 export const NewPostFormContainer = styled.div`
   .post-form {
     /* margin: 30px auto; */
     /* list-style: none; */
-    padding: 1rem;
+    padding: 1rem 0px 2rem 0px;
     width: 90%;
     /* max-width: 40rem; */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -56,6 +57,7 @@ export const InputFieldContainer = styled.div`
 export const ButtonContainer = styled.div`
   .button {
     width: 150px;
+    margin: 5px;
     padding: 0.5rem 1.5rem;
     border: none;
     /* border: 1px solid #ff0055; */
@@ -120,16 +122,14 @@ export const ButtonContainer = styled.div`
   }
 `;
 export const ImageUploadContainer = styled.div`
-  .image-upload.center {
+  .image-upload {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
   }
 
   .image-upload__preview {
-    width: 13rem;
-    height: 13rem;
+    width: 5rem;
+    height: 5rem;
     border: 1px solid #ccc;
     display: flex;
     justify-content: center;

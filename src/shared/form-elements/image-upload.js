@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-
+import { Paragraph, Row, Column } from "../shared.styles";
 import Button from "./button";
 import { ImageUploadContainer } from "./form-elements-style";
 
@@ -7,8 +7,13 @@ const ImageUpload = (props) => {
   const [file, setFile] = useState();
   const [previewUrl, setPreviewUrl] = useState();
   const [isValid, setIsValid] = useState(false);
+   const filePickerRef = useRef(props.inputRef);
 
-  const filePickerRef = useRef(props.inputRef);
+  // useEffect(() => {
+  //   setPreviewUrl(null)
+  //   setFile(null)
+  //   setIsValid(false)
+  // }, [props.resetForm])
 
   useEffect(() => {
     if (!file) {
@@ -50,21 +55,28 @@ const ImageUpload = (props) => {
   return (
     <ImageUploadContainer>
       <input
-         ref={filePickerRef}
+        ref={filePickerRef}
         style={{ display: "none" }}
         type="file"
         accept=".jpg,.png,.jpeg"
         onChange={pickedHandler}
       />
-      <div className={`image-upload ${props.center && "center"}`}>
-        <div className="image-upload__preview">
-          {previewUrl && <img src={previewUrl} alt="Preview" />}
-          {!previewUrl && <p>Please pick an image.</p>}
+      <Row>
+        <div className="image-upload">
+          <Column>
+            <Paragraph>{props.displayName}</Paragraph>
+            <Button type="button" onClick={pickImageHandler}>
+              PICK IMAGE
+            </Button>
+          </Column>
+          <Column>
+            <div className="image-upload__preview">
+              {previewUrl && <img src={previewUrl} alt="Preview" />}
+              {!previewUrl && <p>Please pick an image.</p>}
+            </div>
+          </Column>
         </div>
-        <Button type="button" onClick={pickImageHandler}>
-          PICK IMAGE
-        </Button>
-      </div>
+      </Row>
       {!isValid && <p>{props.errorText}</p>}
     </ImageUploadContainer>
   );

@@ -40,7 +40,12 @@ const TopMenu = () => {
           "Content-Type": "application/json",
         }
       );
-      login(responseData.userId, responseData.token, responseData.userPosts);
+      login(
+        responseData.userId,
+        responseData.token,
+        responseData.userPosts,
+        responseData.email
+      );
     } catch (err) {
       console.log("onSubmit err", err);
     }
@@ -60,7 +65,7 @@ const TopMenu = () => {
             history.push("/");
           }}
         >
-          @mattattheworld
+          @mattattheworld_
         </Paragraph>
       </div>
       <div className="top-right">

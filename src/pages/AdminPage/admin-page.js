@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Container, Column } from "../../shared/shared.styles";
+import { Container, Column, Paragraph } from "../../shared/shared.styles";
+import { AdminPageContainer } from "./admin-page-styles";
+
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import AuthContext from "../../shared/context/authContext";
-import { AdminPageContainer } from "./admin-page-styles";
+
 import PostList from "../../components/PostList/PostList";
 import NewPostForm from "../../components/Forms/NewPostForm";
 
@@ -20,21 +22,23 @@ const AdminPage = () => {
           `http://localhost:5000/api/posts/${authState.userId}`
         );
         setLoadedPosts(responseData.posts);
-        console.log("responseData homePage", responseData);
+        console.log("adminPage responseData.posts", responseData.posts);
       } catch (err) {
         console.log("err", err);
       }
     };
     fetchPosts();
   }, [authState.userId, sendRequest]);
+  console.log("adminPage loadedPosts", loadedPosts);
 
   return (
-    <AdminPageContainer>
+    <AdminPageContainer id="admin-container">
       <Column id="admin-col-left">
+        <Paragraph>{authState.email}</Paragraph>
         <PostList posts={loadedPosts} />
       </Column>
-      <Column>
-        <NewPostForm />
+      <Column id="admin-col-left">
+        <NewPostForm addNewPost={setLoadedPosts} loadedPosts={loadedPosts} />
       </Column>
     </AdminPageContainer>
   );

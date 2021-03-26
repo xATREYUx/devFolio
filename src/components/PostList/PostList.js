@@ -11,7 +11,7 @@ import { faTimesCircle, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const PostList = (props) => {
   const history = useHistory();
-  console.log("allPosts PostList", JSON.stringify(props.posts));
+  console.log("allPosts PostList", props);
 
   const updateCard = (post) => {
     history.push(`/admin-page/${post.id}`);
@@ -20,7 +20,7 @@ const PostList = (props) => {
   const goToPost = (props) => {
     history.push({ pathname: `/posts/${props.id}`, state: props });
   };
-
+  console.log("PostList props", props);
   const foundPosts = props.posts.slice(0, 5).map((post) => {
     return (
       <PostListContainer key={post.id} id="post-list-container">
@@ -36,7 +36,6 @@ const PostList = (props) => {
             <Row className="title-area">
               <h2 className="card-title">{post.title}</h2>
               {/* <Title>{post.title}</Title> */}
-
               {/* <CardButtonArea> */}
             </Row>
             <Row className="button-area">

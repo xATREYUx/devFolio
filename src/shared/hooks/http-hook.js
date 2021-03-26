@@ -23,7 +23,7 @@ export const useHttpClient = () => {
         });
 
         const responseData = await response.json();
-        console.log("http-hook responseData ", responseData);
+        console.log("http-hook responseData", responseData);
 
         activeHttpRequests.current = activeHttpRequests.current.filter(
           (reqCtrl) => reqCtrl !== httpAbortCtrl

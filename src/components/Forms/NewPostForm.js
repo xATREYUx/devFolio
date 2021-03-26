@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { NewPostFormContainer } from "./new-post-form-styles.js";
 
 import { appendErrors, useForm } from "react-hook-form";
@@ -6,8 +6,9 @@ import { appendErrors, useForm } from "react-hook-form";
 import AuthContext from "../../shared/context/authContext";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import ImageUpload from "../../shared/form-elements/image-upload";
+import Button from "../../shared/form-elements/button";
 
-const NewPostForm = () => {
+const NewPostForm = (props) => {
   const [authState, setAuthState, login, logout] = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
   console.log("register", register);
@@ -15,6 +16,10 @@ const NewPostForm = () => {
   const [pickedCardImage, setPickedCardImage] = useState();
   const [pickedCardImageOne, setPickedCardImageOne] = useState();
   const [pickedCardImageTwo, setPickedCardImageTwo] = useState();
+  const [resetComponent, setResetComponent] = useState(false);
+  console.log("newFormData loadedPosts", props.loadedPosts);
+
+  const resetForm = () => setResetComponent(!resetComponent);
 
   const submitPost = async (data) => {
     try {
@@ -29,24 +34,17 @@ const NewPostForm = () => {
       formData.append("postImageOne", pickedCardImageOne);
       formData.append("postImageTwo", pickedCardImageTwo);
 
-      await sendRequest("http://localhost:5000/api/posts", "POST", formData, {
-        Authorization: "Bearer " + authState.token,
-      });
-
-      // await sendRequest(
-      //   "http://localhost:5000/api/posts",
-      //   "POST",
-      //   {
-      //     title: data.title,
-      //     caption: data.caption,
-      //     content: data.content,
-      //     cardImage: data.image[0],
-      //   },
-      //   {
-      //     "Content-Type": "application/json",
-      //     Authorization: "Bearer " + authState.token,
-      //   }
-      // );
+      const response = await sendRequest(
+        "http://localhost:5000/api/posts",
+        "POST",
+        formData,
+        {
+          Authorization: "Bearer " + authState.token,
+        }
+      );
+      console.log("newpostform response", response);
+      props.addNewPost((prevState) => [response.post, ...prevState]);
+      resetForm();
     } catch (err) {
       console.log("submitPost err", err);
     }
@@ -54,7 +52,7 @@ const NewPostForm = () => {
 
   return (
     <NewPostFormContainer>
-      <form onSubmit={handleSubmit(submitPost)}>
+      <form id="new-post-form" onSubmit={handleSubmit(submitPost)}>
         <h1>New Post</h1>
         <br />
         <label>Title</label>
@@ -82,7 +80,6 @@ const NewPostForm = () => {
           ref={register}
         />
         <br />
-        <label>Card Image</label>
         <br />
         {/* <input
           type="text"
@@ -92,25 +89,29 @@ const NewPostForm = () => {
         /> */}
         <ImageUpload
           name="cardImage"
+          displayName="Card Image"
           inputRef={register}
           selectedImage={setPickedCardImage}
+          resetForm={resetComponent}
         />
-        <label>Post Image One</label>
         <ImageUpload
           name="postImageOne"
+          displayName="Post Image One"
           inputRef={register}
           selectedImage={setPickedCardImageOne}
+          resetForm={resetComponent}
         />
-        <label>Post Image Two</label>
         <ImageUpload
           name="postImageTwo"
+          displayName="Post Image Two"
           inputRef={register}
           selectedImage={setPickedCardImageTwo}
+          resetForm={resetComponent}
         />
         {/* <input ref={register} name="cardImage" type="file" /> */}
         {appendErrors.password && <p>{appendErrors.password.message}</p>}
         <br />
-        <input type="submit" />
+        <Button type="submit">Post</Button>
       </form>
     </NewPostFormContainer>
   );

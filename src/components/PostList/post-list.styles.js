@@ -9,11 +9,12 @@ export const PostListContainer = styled.div`
   width: 100%;
   height: 200px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
-  margin: 30px auto;  
+  margin: 30px auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-min-width: 355px;
+  min-width: 355px;
+
   .caption-area {
     color: white;
     padding: 10px 0px 5px 0px;
@@ -25,16 +26,17 @@ min-width: 355px;
   .col-right {
     display: flex;
     flex-direction: column;
-     padding: 0px;
-     height: 100%;
+    padding: 0px;
+    height: 100%;
     /* align-items: center; */
     /* justify-content: center; */
     .title-area {
+      color: #e75b26;
       flex: 1;
       flex-direction: row;
       align-items: flex-end;
-      padding: 0px 10px 0px 10px
-     }
+      padding: 0px 10px 0px 10px;
+    }
 
     .button-area {
       flex: 1;
@@ -43,6 +45,7 @@ min-width: 355px;
       flex-direction: row;
     }
   }
+
   .col-left {
     position: relative;
     display: flex;
@@ -55,7 +58,7 @@ min-width: 355px;
       width: auto;
       position: absolute;
       left: 0;
-       }
+    }
   }
 
   .card-left {

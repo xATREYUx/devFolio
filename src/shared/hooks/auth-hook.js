@@ -9,36 +9,42 @@ const useAuth = () => {
     token: null,
     userId: null,
     isLoggedIn: false,
+    email: null,
   });
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
 
-  const login = useCallback((userId, token, userPosts, expirationDate) => {
-    console.log("login Fired");
-    const tokenExpirationDate =
-      expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
-    setTokenExpirationDate(tokenExpirationDate);
+  const login = useCallback(
+    (userId, token, userPosts, email, expirationDate) => {
+      console.log("login Fired");
+      const tokenExpirationDate =
+        expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+      setTokenExpirationDate(tokenExpirationDate);
 
-    try {
-      setAuthState((prevState) => {
-        return {
-          ...prevState,
-          isLoggedIn: true,
-          userId: userId,
-          token: token,
-        };
-      });
-      localStorage.setItem(
-        "userData",
-        JSON.stringify({
-          userId: userId,
-          token: token,
-          expiration: tokenExpirationDate.toISOString(),
-        })
-      );
-    } catch (err) {
-      console.log("login err", err);
-    }
-  }, []);
+      try {
+        setAuthState((prevState) => {
+          return {
+            ...prevState,
+            isLoggedIn: true,
+            userId: userId,
+            token: token,
+            email: email,
+          };
+        });
+        localStorage.setItem(
+          "userData",
+          JSON.stringify({
+            userId: userId,
+            email: email,
+            token: token,
+            expiration: tokenExpirationDate.toISOString(),
+          })
+        );
+      } catch (err) {
+        console.log("login err", err);
+      }
+    },
+    []
+  );
 
   const logout = () => {
     console.log("auth-hook logout fired ");
@@ -48,6 +54,8 @@ const useAuth = () => {
       userId: null,
       isLoggedIn: false,
       login: login,
+      logout: logout,
+      email: null,
     });
   };
 
