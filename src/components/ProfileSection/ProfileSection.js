@@ -11,7 +11,13 @@ import { Row, Paragraph } from "../../shared/shared.styles";
 import ProfilePic from "../../shared/images/profilepic@3x.png";
 import Button from "../../shared/form-elements/button";
 
+import { useHistory } from "react-router-dom";
+
 const ProfileSection = () => {
+  const goToAboutMePage = () => {
+    history.push("/about-me-page")
+  }
+  const history = useHistory()
   return (
     <ProfileSectionContainer>
       <ProfilePicture>
@@ -26,11 +32,11 @@ const ProfileSection = () => {
         <Paragraph>Miami Beach, FL</Paragraph>
       </NamePlateContainer>
       <ProfileButtons id="profile-buttons-container">
-        <Button className="profile-button" inverse>
-          Contact Me
+        <Button onClick={goToAboutMePage} className="profile-button" inverse>
+          About Me
         </Button>
         <Button className="profile-button" inverse>
-          About Me
+          Contact
         </Button>
       </ProfileButtons>
     </ProfileSectionContainer>

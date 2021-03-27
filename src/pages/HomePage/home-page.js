@@ -27,6 +27,7 @@ import {
   AnimationCoupleSitting,
 } from "../../shared/SilhouetteBlocks/SilhouetteBlocks";
 import AboutThisSite from "../../components/AboutThisSite/AboutThisSite";
+
 const HomePage = (props) => {
   const [loadedPosts, setLoadedPosts] = useState([]);
   const { sendRequest } = useHttpClient();
@@ -75,7 +76,6 @@ const HomePage = (props) => {
         <Column id="section-column-left">
           <Title>React Engineering</Title>
           <AboutThisSite />
-
           <PostList posts={loadedPosts} />
         </Column>
         <Column id="section-column-right">

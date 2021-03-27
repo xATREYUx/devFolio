@@ -12,6 +12,9 @@ import HomePage from "./pages/HomePage/home-page";
 import AdminPage from "./pages/AdminPage/admin-page";
 import AuthPage from "./pages/AuthPage/auth-page";
 import PostPage from "./pages/PostPage/post-page";
+import AboutMePage from "./pages/AboutMePage/about-me-page"
+
+
 import TopMenu from "./components/TopMenu/TopMenu";
 import PrivateRoute from "./shared/PrivateRoute";
 
@@ -31,6 +34,7 @@ const App = () => {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/auth-page" component={AuthPage} />
             <PrivateRoute exact path="/admin-page" component={AdminPage} />
+            <Route exact path="/about-me-page" component={AboutMePage} />
             <Route exact path="/posts/:pid" component={PostPage} />
             <Redirect to="/" />
           </Switch>
