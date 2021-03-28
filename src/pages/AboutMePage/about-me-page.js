@@ -1,6 +1,14 @@
-import React from "react"
+import React from "react";
+import {AboutMePageContainer} from "./about-me-page-styles"
 
-const AboutMe = () => {
-    return <div>About Me</div>
-}
-export default AboutMe
+import AboutMe from "../../components/AboutMe/about-me";
+
+const AboutMePage = () => {
+  return (
+    <AboutMePageContainer>
+      <AboutMe />
+    </AboutMePageContainer>
+  );
+};
+
+export default AboutMePage;

@@ -36,10 +36,28 @@ export const Title = styled.div`
   font-size: 3rem;
   color: white;
   font-family: "Allura", cursive;
-`;
 
-export const Paragraph = styled.div`
-  font-family: "Kufam", cursive;
+  &.inverse {
+    color: black;
+  }
+`;``
+
+export const Paragraph = styled.div``
+  font-family: "Libre Franklin", sans-serif;
 `;
 
 export const FlexBreak = styled.div``;
+
+export const BaseCardStyle = styled.div`
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  min-width: 355px;
+  padding: 10px;
+`;
