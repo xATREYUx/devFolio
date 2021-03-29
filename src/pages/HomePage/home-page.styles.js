@@ -21,7 +21,7 @@ export const HomePageContainer = styled.div`
   .bubbleBlobs {
     z-index: -2;
     position: absolute;
-    width: 30vw;
+    width: 30%;
     height: 45vh;
     bottom: 95px;
   }

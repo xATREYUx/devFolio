@@ -15,6 +15,7 @@ export const HeaderContainer = styled.div`
   /* justify-content: space-between; */
   .logo {
     height: 30vw;
+    max-width: 250px;
     /* margin: 40px; */
     /* margin-top: 60px; */
   }
@@ -26,6 +27,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const SubTitle = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
+  max-width: 
   margin: 50px
 `

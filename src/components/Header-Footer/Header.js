@@ -20,7 +20,7 @@ const Header = () => {
   }, [subTitle]);
 
   return (
-    <HeaderContainer>
+    <HeaderContainer id="header-container">
       <Logo className="logo" />
       <SubTitle>{subTitle}</SubTitle>
       {/* <Birds className="birds" /> */}
