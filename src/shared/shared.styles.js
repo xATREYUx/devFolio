@@ -40,9 +40,9 @@ export const Title = styled.div`
   &.inverse {
     color: black;
   }
-`;``
+`;
 
-export const Paragraph = styled.div``
+export const Paragraph = styled.div`
   font-family: "Libre Franklin", sans-serif;
 `;
 
