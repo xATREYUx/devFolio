@@ -1,20 +1,25 @@
 import React, { useContext, useState, useEffect } from "react";
-import Button from "../../shared/form-elements/button";
-import { PostListContainer, CardButtonArea } from "./post-list.styles";
 import { Column, Paragraph, Row, Title } from "../../shared/shared.styles";
-import Climber from "../../shared/images/IMG_2280.jpeg";
-import { useHistory } from "react-router-dom";
 
 // import PostPage from "../../pages/post-page/post-page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle, faEdit } from "@fortawesome/free-solid-svg-icons";
 
+import { useHistory, useParams } from "react-router-dom";
+import AuthContext from "../../shared/context/authContext";
+
+import Button from "../../shared/form-elements/button";
+import { PostListContainer, CardButtonArea } from "./post-list.styles";
+import Climber from "../../shared/images/IMG_2280.jpeg";
+
 const PostList = (props) => {
   const history = useHistory();
+  const [authState] = useContext(AuthContext);
+
   console.log("allPosts PostList", props);
 
   const updateCard = (post) => {
-    history.push(`/admin-page/${post.id}`);
+    history.push(`/post/${post.id}`);
   };
 
   const goToPost = (props) => {
@@ -44,8 +49,8 @@ const PostList = (props) => {
                 View Post
               </Button>
             </Row>
-            {/* <Row>
-              {authContext.userId ? (
+            <Row>
+              {authState.userId ? (
                 <>
                   <FontAwesomeIcon
                     icon={faTimesCircle}
@@ -59,7 +64,7 @@ const PostList = (props) => {
                   />
                 </>
               ) : null}
-            </Row> */}
+            </Row>
             {/* </CardButtonArea> */}
           </Column>
         </Row>

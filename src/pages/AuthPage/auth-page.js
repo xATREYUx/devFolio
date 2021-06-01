@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 
 import { appendErrors, useForm } from "react-hook-form";
 import { Container } from "../../shared/shared.styles";
@@ -30,17 +30,18 @@ const AuthPage = () => {
         }
       );
       login(responseData.userId, responseData.token, responseData.userPosts);
+      history.push(`/admin-page/${responseData.userId}`);
     } catch (err) {
       console.log("onSubmit err", err);
+      history.push(`/`);
     }
-    history.push("/admin-page");
   };
 
-  const submitSignup = async (data) => {
-    setAuthState({
-      password: null,
-    });
-  };
+  // const submitSignup = async (data) => {
+  //   setAuthState({
+  //     password: null,
+  //   });
+  // };
 
   return (
     <Container>

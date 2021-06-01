@@ -28,12 +28,13 @@ const App = () => {
   return (
     <div className="app-container">
       <AuthContext.Provider value={[authState, setAuthState, login, logout]}>
+      {/* https://stackoverflow.com/questions/54427793/getting-blank-page-after-react-app-publish-in-github/54428433 */}
         <Router basename={process.env.PUBLIC_URL}>
           <TopMenu />
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/auth-page" component={AuthPage} />
-            <PrivateRoute exact path="/admin-page" component={AdminPage} />
+            <PrivateRoute exact path="/admin-page/:uid" component={AdminPage} />
             <Route exact path="/about-me-page" component={AboutMePage} />
             <Route exact path="/posts/:pid" component={PostPage} />
             <Redirect to="/" />

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NewPostFormContainer = styled.div`
+export const FormContainer = styled.div`
   display: flex;
   width: 100%;
   position: relative;

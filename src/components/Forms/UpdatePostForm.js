@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { FormContainer } from "./new-post-form-styles.js";
 
+import { useHistory, useParams } from "react-router-dom";
+
 import { appendErrors, useForm } from "react-hook-form";
 
 import AuthContext from "../../shared/context/authContext";
@@ -8,7 +10,8 @@ import { useHttpClient } from "../../shared/hooks/http-hook";
 import ImageUpload from "../../shared/form-elements/image-upload";
 import Button from "../../shared/form-elements/button";
 
-const NewPostForm = (props) => {
+const UpdatePostForm = (props) => {
+  let history = useHistory();
   const [authState, setAuthState, login, logout] = useContext(AuthContext);
   const { register, handleSubmit, reset } = useForm();
   console.log("register", register);
@@ -16,37 +19,57 @@ const NewPostForm = (props) => {
   const [pickedCardImage, setPickedCardImage] = useState();
   const [pickedCardImageOne, setPickedCardImageOne] = useState();
   const [pickedCardImageTwo, setPickedCardImageTwo] = useState();
+  const [loadedPost, setLoadedPost] = useState();
+
+  const postId = useParams().pid;
+
   const [resetComponent, setResetComponent] = useState(false);
   console.log("newFormData loadedPosts", props.loadedPosts);
+
+  useEffect(() => {
+    const fetchPlace = async () => {
+      try {
+        const responseData = await sendRequest(
+          `http://localhost:5000/api/posts/${postId}`
+        );
+        setLoadedPost(responseData.post);
+        const formData = new FormData();
+        formData.append("title", responseData.post.title);
+        formData.append("caption", responseData.post.caption);
+        formData.append("content", responseData.post.content);
+        formData.append("cardImage", responseData.post.pickedCardImage);
+        formData.append("postImageOne", responseData.post.pickedCardImageOne);
+        formData.append("postImageTwo", responseData.post.pickedCardImageTwo);
+      } catch (err) {}
+    };
+    fetchPlace();
+  }, [sendRequest, postId]);
 
   const resetForm = () => setResetComponent(!resetComponent);
 
   const submitPost = async (data) => {
     try {
       console.log("send data", data);
-      console.log("send pickedCardImage", pickedCardImage);
-
-      const formData = new FormData();
-      formData.append("title", data.title);
-      formData.append("caption", data.caption);
-      formData.append("content", data.content);
-      formData.append("cardImage", pickedCardImage);
-      formData.append("postImageOne", pickedCardImageOne);
-      formData.append("postImageTwo", pickedCardImageTwo);
 
       const response = await sendRequest(
         "http://localhost:5000/api/posts",
-        "POST",
-        formData,
+        "PATCH",
+        JSON.stringify({
+          title: data.title,
+          caption: data.caption,
+          content: data.content,
+          pickedCardImage: data.pickedCardImage,
+          pickedCardImageOne: data.pickedCardImageOne,
+          pickedCardImageTwo: data.pickedCardImageTwo,
+        }),
         {
+          "Content-Type": "application/json",
           Authorization: "Bearer " + authState.token,
         }
       );
-      console.log("newpostform response", response);
-      props.addNewPost((prevState) => [response.post, ...prevState]);
-      resetForm()
-      reset()
-     } catch (err) {
+      resetForm();
+      reset();
+    } catch (err) {
       console.log("submitPost err", err);
     }
   };
@@ -81,13 +104,6 @@ const NewPostForm = (props) => {
           ref={register}
         />
         <br />
-        <br />
-        {/* <input
-          type="text"
-          placeholder="Image"
-          name="cardImage"
-          ref={register}
-        /> */}
         <ImageUpload
           name="cardImage"
           displayName="Card Image"
@@ -118,4 +134,4 @@ const NewPostForm = (props) => {
   );
 };
 
-export default NewPostForm;
+export default UpdatePostForm;

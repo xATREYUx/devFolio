@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { TopMenuContainer, LoggedInIcons } from "./top-menu-styles.js";
 import { Container, Column, Row, Paragraph } from "../../shared/shared.styles";
+
 import Button from "../../shared/form-elements/button";
 
-import { useHistory, Link } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { appendErrors, useForm } from "react-hook-form";
 
 import AuthContext from "../../shared/context/authContext";
@@ -20,11 +21,14 @@ import {
 
 const TopMenu = () => {
   const [authState, setAuthState, login, logout] = useContext(AuthContext);
+  const [userId, setUserId] = useState();
+  const postId = useParams().pid;
+  let history = useHistory();
+
   console.log("TopMenu authState", authState);
 
   const { register, handleSubmit } = useForm();
   const { sendRequest } = useHttpClient();
-  let history = useHistory();
 
   const submitLogin = async (data) => {
     console.log("submitLogin data", data.email);
@@ -46,10 +50,10 @@ const TopMenu = () => {
         responseData.userPosts,
         responseData.email
       );
+      history.push(`/admin-page/${responseData.userId}`);
     } catch (err) {
       console.log("onSubmit err", err);
     }
-    history.push("/admin-page");
   };
 
   const logoutHandler = () => {
@@ -101,7 +105,7 @@ const TopMenu = () => {
               className="logged-in-icon"
               icon={faUserAstronaut}
               color="#E75B26"
-              onClick={() => history.push("/admin-page")}
+              onClick={() => history.push(`/admin-page/${postId}`)}
             />
             <FontAwesomeIcon
               className="logged-in-icon"
